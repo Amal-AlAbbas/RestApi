@@ -23,9 +23,10 @@ This project is a REST API service built using Liferay 7.3. It allows users to q
 
 To clone the repository, run the following command:
 
-```bash
+
 git clone https://github.com/username/repository.git
 
+  
 ## Postman Integration
 You can use Postman to interact with the API. Follow these steps to set up and send a request:
 
@@ -38,10 +39,10 @@ Send a Request:
 
 Set the request type to GET.
 Use the following URL, replacing myfile.txt with the actual file name you want to query
-```bash
+
 http://localhost:8080/o/greetings/myfile.txt
 
 befor it test if the bundel work 
-```bash
+
 http://localhost:8080/o/greetings/test
-it will Print API is working
+it will Print **API is working**

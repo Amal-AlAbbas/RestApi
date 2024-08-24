@@ -25,3 +25,23 @@ To clone the repository, run the following command:
 
 ```bash
 git clone https://github.com/username/repository.git
+
+## Postman Integration
+You can use Postman to interact with the API. Follow these steps to set up and send a request:
+
+Download Postman: If you don't have Postman installed, download it from here.
+
+Import the Postman Collection: You can use the following link to import a collection pre-configured with the necessary endpoints for this API:
+
+Postman Collection Link
+Send a Request:
+
+Set the request type to GET.
+Use the following URL, replacing myfile.txt with the actual file name you want to query
+```bash
+http://localhost:8080/o/greetings/myfile.txt
+
+befor it test if the bundel work 
+```bash
+http://localhost:8080/o/greetings/test
+it will Print API is working

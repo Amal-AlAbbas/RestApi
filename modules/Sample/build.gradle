@@ -1,6 +1,9 @@
 dependencies {
 	compileOnly group: "com.liferay.portal", name: "release.portal.api"
 	compileOnly group: "org.osgi", name: "org.osgi.service.jaxrs"
+// https://mvnrepository.com/artifact/org.apache.commons/commons-text
+	implementation group: 'org.apache.commons', name: 'commons-text', version: '1.9'
+
 
 }
 

@@ -5,6 +5,7 @@ package sample.application;
  */
 import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -31,17 +32,21 @@ public class SampleApplication extends Application {
 
 	@GET
 	@Path("/{filename}")
-	@Produces("text/plain")
+	@Produces("application/xml; charset=UTF-8")
 	public Response getFileData(@PathParam("filename") String filename) {
 		try {
-			String data = fileDataHandler.readFileData(filename);
-			return Response.ok(data).build();
+			String xmlData = fileDataHandler.readFileDataAsJson(filename); // إذا كنت تستخدم XML، يمكنك تغيير هذا الأسلوب ليعكس XML بدلاً من JSON
+			return Response.ok(xmlData, MediaType.APPLICATION_XML)
+					.header("Content-Type", "application/xml; charset=UTF-8")
+					.build();
 		} catch (IOException e) {
 			return Response.status(Response.Status.NOT_FOUND)
-					.entity("File not found: " + filename)
+					.entity("<error>File not found: " + filename + "</error>")
+					.header("Content-Type", "application/xml; charset=UTF-8")
 					.build();
 		}
 	}
+
 	@GET
 	@Path("/test")
 	@Produces("text/plain")
